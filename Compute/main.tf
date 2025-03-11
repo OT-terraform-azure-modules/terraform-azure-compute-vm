@@ -28,7 +28,8 @@ resource "azurerm_linux_virtual_machine" "modular_vm" {
 
   admin_ssh_key {
     username   = each.value.admin_username
-    public_key = file(each.value.ssh_key_path)
+    #public_key = file(each.value.ssh_key_path)
+    public_key = each.value.ssh_key_path
   }
 
   os_disk {
