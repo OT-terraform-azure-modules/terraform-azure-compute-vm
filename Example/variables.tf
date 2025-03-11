@@ -19,6 +19,9 @@ variable "virtual_machines" {
     admin_username = string
     nic_name       = string
     ssh_key_path   = string
+    disk_name      = string
+    storage_account_type  = string
+    disk_size_gb   = number
     offer          = string
     sku_name       = string
   }))

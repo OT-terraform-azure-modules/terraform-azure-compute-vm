@@ -33,8 +33,10 @@ resource "azurerm_linux_virtual_machine" "modular_vm" {
   }
 
   os_disk {
+    name                 = each.value.disk_name
     caching              = "ReadWrite"
-    storage_account_type = "Premium_LRS"
+    storage_account_type = each.value.storage_account_type
+    disk_size_gb         = each.value.disk_size_gb
   }
 
   source_image_reference {
