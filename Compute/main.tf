@@ -40,7 +40,8 @@ resource "azurerm_linux_virtual_machine" "modular_vm" {
   source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
-    sku       = "22_04-lts-gen2"
+    #sku       = "22_04-lts-gen2"
+    sku = each.value.sku_name
     version   = "latest"
   }
 }
